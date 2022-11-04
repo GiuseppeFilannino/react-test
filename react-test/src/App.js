@@ -1,16 +1,18 @@
-import {Home} from './Home'
-import { Route,Routes } from 'react-router-dom'
+import { Home } from './Home'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { MealDetails } from './MealDetails'
 
 export function App() {
 
     return (
         <div>
-            <Routes >
-                <Route path='/' element={<Home />} > 
-                <Route path='MealDetails' element={<MealDetails />} />
-                </Route>
-            </Routes>
+            <BrowserRouter >
+                <Routes >
+                    <Route path='/' element={<Home />} />
+                    <Route path='/details/:id' element={<MealDetails />} />
+                </Routes>
+            </BrowserRouter>
         </div>
-        )
+
+    )
 }
